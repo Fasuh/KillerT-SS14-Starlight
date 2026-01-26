@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Records;
 using Content.Shared.Security;
 using Content.Shared.StationRecords;
 using Robust.Shared.Serialization;
@@ -40,17 +41,19 @@ public sealed class CriminalRecordsConsoleState : BoundUserInterfaceState
     public SecurityStatus FilterStatus = SecurityStatus.None;
     public readonly Dictionary<uint, string>? RecordListing;
     public readonly StationRecordsFilter? Filter;
+    public readonly FullCharacterRecords? CharacterRecord;
 
-    public CriminalRecordsConsoleState(Dictionary<uint, string>? recordListing, StationRecordsFilter? newFilter)
+    public CriminalRecordsConsoleState(Dictionary<uint, string>? recordListing, StationRecordsFilter? newFilter, FullCharacterRecords? characterRecord)
     {
         RecordListing = recordListing;
         Filter = newFilter;
+        CharacterRecord = characterRecord;
     }
 
     /// <summary>
     /// Default state for opening the console
     /// </summary>
-    public CriminalRecordsConsoleState() : this(null, null)
+    public CriminalRecordsConsoleState() : this(null, null, null)
     {
     }
 

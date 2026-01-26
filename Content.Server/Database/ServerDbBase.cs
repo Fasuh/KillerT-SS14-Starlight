@@ -12,10 +12,10 @@ using Content.Server.Humanoid.Markings.Extensions;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Database;
-// Cosmatic Drift Record System-start
-using Content.Shared._CD.Records;
-using Content.Server._CD.Records;
-// Cosmatic Drift Record System-end
+// Starlight edit start - Records system
+using Content.Shared._Starlight.Records;
+using Content.Server._Starlight.Records;
+// Starlight edit end
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;

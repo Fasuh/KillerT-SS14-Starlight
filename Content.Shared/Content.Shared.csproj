@@ -33,6 +33,10 @@
     <Compile Update="_Starlight\Weapon\Components\GunComponent.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Remove="_Starlight\CriminalRecords\CriminalRecordsUi.cs" />
+    <Compile Remove="_Starlight\CriminalRecords\CriminalRecord.cs" />
+    <Compile Remove="_Starlight\CriminalRecords\Components\CriminalRecordsHackerComponent.cs" />
+    <Compile Remove="_Starlight\Records\CharacterRecordSizeHelper.cs" />
   </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\Robust.CompNetworkGenerator.targets" />
