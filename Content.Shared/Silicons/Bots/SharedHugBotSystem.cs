@@ -17,8 +17,8 @@ public abstract partial class SharedHugBotSystem : EntitySystem
 
     private void OnEmagged(Entity<HugBotComponent> entity, ref GotEmaggedEvent args)
     {
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction) ||
-            _emag.CheckFlag(entity, EmagType.Interaction) ||
+        if (!_emag.CompareFlag(args.Type, EmagType.Disruption) ||
+            _emag.CheckFlag(entity, EmagType.Disruption) ||
             !TryComp<HugBotComponent>(entity, out var hugBot))
             return;
 

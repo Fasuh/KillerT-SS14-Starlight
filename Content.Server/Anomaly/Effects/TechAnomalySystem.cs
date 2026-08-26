@@ -115,10 +115,10 @@ public sealed partial class TechAnomalySystem : EntitySystem
 
             if (_random.Prob(tech.Comp.EmagSupercritProbability))
             {
-                var sourceEv = new GotEmaggedEvent(tech, EmagType.Access | EmagType.Interaction);
+                var sourceEv = new GotEmaggedEvent(tech, EmagType.All);
                 RaiseLocalEvent(source, ref sourceEv);
 
-                var sinkEv = new GotEmaggedEvent(tech, EmagType.Access | EmagType.Interaction);
+                var sinkEv = new GotEmaggedEvent(tech, EmagType.All);
                 RaiseLocalEvent(sink, ref sinkEv);
             }
 

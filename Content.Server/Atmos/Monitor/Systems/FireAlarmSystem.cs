@@ -72,10 +72,10 @@ public sealed partial class FireAlarmSystem : EntitySystem
 
     private void OnEmagged(EntityUid uid, FireAlarmComponent component, ref GotEmaggedEvent args)
     {
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+        if (!_emag.CompareFlag(args.Type, EmagType.Disruption))
             return;
 
-        if (_emag.CheckFlag(uid, EmagType.Interaction))
+        if (_emag.CheckFlag(uid, EmagType.Disruption))
             return;
 
         if (!TryComp<AtmosAlarmableComponent>(uid, out var alarmable))

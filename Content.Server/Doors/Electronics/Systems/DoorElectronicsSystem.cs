@@ -81,10 +81,10 @@ public sealed partial class DoorElectronicsSystem : EntitySystem
     // Starlight begin
     private void OnGotEmagged(EntityUid uid, DoorElectronicsComponent comp, ref GotEmaggedEvent args)
     {
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+        if (!_emag.CompareFlag(args.Type, EmagType.Disruption))
             return;
 
-        if (_emag.CheckFlag(uid, EmagType.Interaction, args.EmagComponent))
+        if (_emag.CheckFlag(uid, EmagType.Disruption, args.EmagComponent))
             return;
 
         if (args.EmagComponent is null) return;

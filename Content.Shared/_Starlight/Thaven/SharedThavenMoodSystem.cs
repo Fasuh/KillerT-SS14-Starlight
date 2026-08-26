@@ -21,11 +21,11 @@ public abstract partial class SharedThavenMoodSystem : EntitySystem
 
     protected virtual void OnEmagged(Entity<ThavenMoodsComponent> ent, ref GotEmaggedEvent args)
     {
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+        if (!_emag.CompareFlag(args.Type, EmagType.Disruption))
             return;
 
         // allow repeated-emagging of thaven
-        // if (_emag.CheckFlag(ent, EmagType.Interaction))
+        // if (_emag.CheckFlag(ent, EmagType.Disruption))
         //     return;
 
         // allow self-emagging of thaven

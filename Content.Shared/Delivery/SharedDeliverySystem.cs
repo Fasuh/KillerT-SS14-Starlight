@@ -303,7 +303,7 @@ public abstract partial class SharedDeliverySystem : EntitySystem
     #region Starlight
     protected void OnGotEmagged(Entity<DeliverySpawnerComponent> deliverySpawner, ref GotEmaggedEvent args)
     {
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+        if (!_emag.CompareFlag(args.Type, EmagType.Disruption))
             return;
         var emagTable = deliverySpawner.Comp.EmagTable;
         if (emagTable != null)

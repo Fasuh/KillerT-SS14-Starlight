@@ -254,10 +254,10 @@ public sealed partial class CloningPodSystem : EntitySystem
     /// </summary>
     private void OnEmagged(Entity<CloningPodComponent> ent, ref GotEmaggedEvent args)
     {
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+        if (!_emag.CompareFlag(args.Type, EmagType.Lethal))
             return;
 
-        if (_emag.CheckFlag(ent.Owner, EmagType.Interaction))
+        if (_emag.CheckFlag(ent.Owner, EmagType.Lethal))
             return;
 
         if (!this.IsPowered(ent.Owner, EntityManager))

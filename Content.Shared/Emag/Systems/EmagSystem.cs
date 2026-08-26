@@ -153,8 +153,15 @@ public enum EmagType
 {
     None = 0,
     All = ~None,
-    Interaction = 1 << 1,
-    Access = 1 << 2
+    // Starlight edit start - rework emags
+    Access = 1 << 1, // Basically only authentication disruptor.
+    Lethal = 1 << 2, // All things that can damage someone - recycler, artifact crusher, etc.
+    Disruption = 1 << 3, // All things that are harmless, or cant possibly result in a death - APC, Thaven, Cargo console, etc.
+    Contraband = 1 << 4, // All vends that have unlockable contraband by emag, some lathes like clothing and cybernetics, mail teleporter.
+    Armaments = 1 << 5, // All weapons at lathes, including borg modules.
+    Syndicate = 1 << 6, // Syndicate specific things - syndicate fax, pinpointer.
+    Silicon = 1 << 7, // Silicons - AI and borgs, lawboards.
+    // Starlight edit end
 }
 /// <summary>
 /// Shows a popup to emag user (client side only!) and adds <see cref="EmaggedComponent"/> to the entity when handled

@@ -156,7 +156,7 @@ public sealed partial class SiliconLawSystem : SharedSiliconLawSystem
     private void OnIonStormLaws(EntityUid uid, SiliconLawProviderComponent component, ref IonStormLawsEvent args)
     {
         // Emagged borgs are immune to ion storm
-        if (!_emag.CheckFlag(uid, EmagType.Interaction))
+        if (!_emag.CheckFlag(uid, EmagType.Silicon))
         {
             component.Lawset = args.Lawset;
 
@@ -379,7 +379,7 @@ public sealed partial class SiliconLawSystem : SharedSiliconLawSystem
 /// STARLIGHT START
     private void OnGotEmagged(Entity<SiliconLawProviderComponent> ent, ref GotEmaggedEvent args)
     {
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+        if (!_emag.CompareFlag(args.Type, EmagType.Silicon))
             return;
 
         if (args.EmagComponent == null)

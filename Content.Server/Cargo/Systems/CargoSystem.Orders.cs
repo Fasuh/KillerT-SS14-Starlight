@@ -137,10 +137,10 @@ namespace Content.Server.Cargo.Systems
 
         private void OnEmagged(Entity<CargoOrderConsoleComponent> ent, ref GotEmaggedEvent args)
         {
-            if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+            if (!_emag.CompareFlag(args.Type, EmagType.Disruption))
                 return;
 
-            if (_emag.CheckFlag(ent, EmagType.Interaction))
+            if (_emag.CheckFlag(ent, EmagType.Disruption))
                 return;
 
             args.Handled = true;
@@ -257,7 +257,7 @@ namespace Content.Server.Cargo.Systems
             order.Approved = true;
             _audio.PlayPvs(ApproveSound, uid);
 
-            if (!_emag.CheckFlag(uid, EmagType.Interaction))
+            if (!_emag.CheckFlag(uid, EmagType.Disruption))
             {
                 var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(uid, player);
                 RaiseLocalEvent(tryGetIdentityShortInfoEvent);

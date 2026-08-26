@@ -37,10 +37,10 @@ public sealed partial class MedibotSystem : EntitySystem
 
     private void OnEmagged(EntityUid uid, EmaggableMedibotComponent comp, ref GotEmaggedEvent args)
     {
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+        if (!_emag.CompareFlag(args.Type, EmagType.Disruption))
             return;
 
-        if (_emag.CheckFlag(uid, EmagType.Interaction))
+        if (_emag.CheckFlag(uid, EmagType.Disruption))
             return;
 
         if (!TryComp<MedibotComponent>(uid, out var medibot))

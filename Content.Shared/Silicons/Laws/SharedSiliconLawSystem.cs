@@ -30,10 +30,10 @@ public abstract partial class SharedSiliconLawSystem : EntitySystem
 
     private void OnGotEmagged(EntityUid uid, EmagSiliconLawComponent component, ref GotEmaggedEvent args)
     {
-        if (!_emag.CompareFlag(args.Type, EmagType.Interaction))
+        if (!_emag.CompareFlag(args.Type, EmagType.Silicon))
             return;
 
-        if (_emag.CheckFlag(uid, EmagType.Interaction, args.EmagComponent)) // Starlight edit | allow bypass if differing factions
+        if (_emag.CheckFlag(uid, EmagType.Silicon, args.EmagComponent)) // Starlight edit | allow bypass if differing factions
             return;
 
         // prevent self-emagging
